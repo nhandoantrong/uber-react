@@ -12,7 +12,7 @@ export default class PhoneVerification extends Component {
                     >Did you enter the correct number?</span>
                 </p>
                 <div className="input-group">
-                    <FormVerification />
+                    <FormVerification changeToInfoConfirm={this.props.changeToInfoConfirm} />
                 </div>
 
                 

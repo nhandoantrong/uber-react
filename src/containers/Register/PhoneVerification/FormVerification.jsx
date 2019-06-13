@@ -63,8 +63,8 @@ export default withFormik({
             return {};
         return error;
     },
-    handleSubmit: (values, { setSubmitting }) => {
-        
+    handleSubmit: (values, {props, setSubmitting }) => {
+        props.changeToInfoConfirm();
     },
     displayName: "Verification Number"
 })(FormVerification)

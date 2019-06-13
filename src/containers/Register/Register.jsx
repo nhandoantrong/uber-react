@@ -12,7 +12,11 @@ export default class Register extends Component {
         },
         phoneVerification: {
             isActive: false,
+        },
+        infoConfirm:{
+            isActive : false,
         }
+        
     }
 
     changeToVerification = () => {
@@ -52,18 +56,36 @@ export default class Register extends Component {
         })
     }
 
+    changeToInfoConfirm =() =>{
+        this.setState({
+            phoneVerification: {
+                ...this.state.phoneVerification,
+                isActive: false
+            },
+            infoConfirm:{
+                ...this.state.infoConfirm,
+                isActive: true,
+            }
+        })
+    }
+
+
     render() {
+        const {history} = this.props;
         return (
             <section className="register-page">
 
                 <div className="content">
-                    {/* <PhoneRegister isActive={this.state.phoneRegister.isActive}
+                    <PhoneRegister isActive={this.state.phoneRegister.isActive}
                         changeToVerification={this.changeToVerification}
                         setPhoneNumber={this.setPhoneNumber} />
                     <PhoneVerification isActive={this.state.phoneVerification.isActive}
                         changeToRegisteration={this.changeToRegisteration}
-                        phoneNumber={this.state.phoneRegister.phoneNumber} /> */}
-                    <InfoConfirm />
+                        phoneNumber={this.state.phoneRegister.phoneNumber} 
+                        changeToInfoConfirm={this.changeToInfoConfirm}
+                        />
+                        
+                    <InfoConfirm history ={history}isActive = {this.state.infoConfirm.isActive}/>
                 </div>
 
             </section>

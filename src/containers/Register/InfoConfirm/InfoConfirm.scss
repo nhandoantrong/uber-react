@@ -3,15 +3,30 @@
 
 .info-confirm {
   @include centerAbsolute();
+  @include toggleEffect();
   background-color: white;
   width: 300px;
-  padding: 20px 5px 5px;
+  padding: 20px 10px 10px;
+    
+
   h2 {
     font-weight: 100;
     margin-bottom: 25px;
   }
   form {
+    input {
+      width: 100%;
+      font-size: 1.15rem;
+      border: none;
+      outline: none;
+      box-shadow: 0 5px 10px rgb(172, 172, 172);
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
     .gender {
+      margin-bottom: 15px;
+      margin-top: 10px;
       .gender-choices {
         display: flex;
         .input-group {
@@ -36,6 +51,34 @@
             }
           }
         }
+      }
+    }
+
+    .profile-picture {
+      input {
+        display: none;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img {
+          margin-right: 10px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+      }
+    }
+    .submit-line {
+        display: flex;
+        .error-line{
+            color: $error-text-color
+        }
+      button {
+        margin-left: auto;
       }
     }
   }
