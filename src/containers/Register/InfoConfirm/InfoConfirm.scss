@@ -1,0 +1,42 @@
+@import "../../../scss/abstract/variable";
+@import "../../../scss/abstract/mixin";
+
+.info-confirm {
+  @include centerAbsolute();
+  background-color: white;
+  width: 300px;
+  padding: 20px 5px 5px;
+  h2 {
+    font-weight: 100;
+    margin-bottom: 25px;
+  }
+  form {
+    .gender {
+      .gender-choices {
+        display: flex;
+        .input-group {
+          margin: 5px;
+          label {
+            cursor: pointer;
+            img {
+              cursor: pointer;
+            }
+          }
+          .gender-choice {
+            display: none;
+            &:checked ~ label {
+              img {
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                box-shadow: 0 0 5px black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.feedback {
+  box-shadow: 0 0 5px $error-background-color;
+  font-size: 0.8rem;
+  background-color: $error-background-color;
+  color: $error-text-color;
+  padding: 5px;
+}
+.feedback-success {
+  box-shadow: 0 0 5px $error-background-color;
+  font-size: 0.8rem;
+  padding: 5px;
+  opacity: 0;
+  visibility: hidden;
+}

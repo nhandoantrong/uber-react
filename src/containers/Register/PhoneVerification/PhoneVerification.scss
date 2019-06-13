@@ -1,0 +1,40 @@
+
+@import '../../../scss/abstract/variable';
+@import '../../../scss/abstract/mixin';
+
+
+
+.phone-verification{
+    @include centerAbsolute();
+    @include toggleEffect();
+    width: 300px;
+    background-color: $white-background-color;
+    padding: 20px 10px 15px 20px;
+    .reconfirm{
+        color: $blue-color;
+        cursor: pointer;
+    }
+    .verify-text{
+        margin-bottom: 40px;
+        padding-right: 20px;
+    }
+    .input-group{
+        width: 100%;
+        input{
+            width: 20%;
+            margin: 0 2.5%;
+            border: none;
+            font-size: 1.25rem;
+            padding: 10px;
+            text-align: center;
+            outline: none;
+        }
+    }
+    .confirmation{
+        margin-top: 50px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

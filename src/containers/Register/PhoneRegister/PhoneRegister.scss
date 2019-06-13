@@ -1,0 +1,16 @@
+@import '../../../scss/abstract/variable';
+
+
+.submit-line{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    .notice{
+        display: flex;
+        align-items: center;
+        .feedback{
+            background-color: unset;
+            box-shadow: unset;
+        }
+    }
+}

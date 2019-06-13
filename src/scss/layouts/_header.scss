@@ -1,0 +1,28 @@
+.header{
+    height: 50px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    .logo{
+        height: 100%;
+
+        img{
+            height: 30px;
+            display: inline-block;
+        }
+        cursor: pointer;
+    }
+    .collapse{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.14);
+    z-index: 10;
+    
+}
