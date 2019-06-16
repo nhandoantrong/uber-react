@@ -16,6 +16,24 @@
   }
 }
 
+@mixin leftSideAbsolute(){
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -55%);
+  -webkit-transform: translate(0, -55%);
+  -moz-transform: translate(0, -55%);
+  -ms-transform: translate(0, -55%);
+  -o-transform: translate(0, -55%);
+  @media screen and (min-width: 321px) {
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+  }
+}
+
 @mixin toggleEffect {
   &.active {
     opacity: 1;
@@ -24,4 +42,29 @@
   opacity: 0;
   visibility: hidden;
   transition: 0.15s all ease;
+}
+
+@mixin backgroundImage($link){
+  background-image: url($link);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin onlyTextContent {
+  @include backgroundImage("/img/background.jpg");
+  height: 100vh;
+  .content{
+    margin: 10px 10px ;
+    width: auto;
+    height: calc(100% - 50px - 110px);
+    overflow: auto;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 15%;
+    @media screen and (min-width: 576px) {
+        height: calc(100% - 50px - 80px)
+    }
+    background-color: $white-background-color;
+  }
 }

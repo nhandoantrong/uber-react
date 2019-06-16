@@ -9,18 +9,38 @@
     left: 0;
     width: 100%;
     background-color: white;
+    img{
+        height: 30px;
+        display: inline-block;
+    }
     .logo{
         height: 100%;
 
-        img{
-            height: 30px;
-            display: inline-block;
-        }
+        
         cursor: pointer;
     }
     .collapse{
-        font-size: 1.5rem;
-        cursor: pointer;
+        display: flex;
+        align-items: center;
+        i{
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .name{
+            text-align: right;
+            i{
+                font-size: 1rem;
+            }
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+        img{
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+        
     }
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.14);
     z-index: 10;

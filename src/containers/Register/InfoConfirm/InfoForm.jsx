@@ -1,6 +1,8 @@
 import React from 'react';
 import { withFormik } from "formik"
-import { vienameseRegex } from "../../../helpers/RegexHelper"
+import { vienameseRegex } from "../../../helpers/RegexHelper";
+import {connect} from "react-redux";
+import {changeUserInfo} from "../../../redux/actions/userAction"
 const InfoForm = props => {
     const {
         values,
@@ -66,7 +68,13 @@ const InfoForm = props => {
     );
 };
 
-export default withFormik({
+const mapDispatchToProps = dispatch =>({
+    changeUserInfo : (name,gender) =>{
+        dispatch(changeUserInfo(name,gender))
+    }
+})
+
+export default connect(null,mapDispatchToProps)(withFormik({
     mapPropsToValues: () => ({ fullname: '', gender: "", file: null }),
 
     // Custom sync validation
@@ -90,9 +98,10 @@ export default withFormik({
         return error;
     },
 
-    handleSubmit: (values, {props, setSubmitting }) => {
+    handleSubmit: (values, {props }) => {
+        props.changeUserInfo(values.fullname,values.gender)
         props.history.push("/booking")
     },
 
     displayName: 'BasicForm',
-})(InfoForm)
+})(InfoForm))

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
     render() {
         return (
-            <footer className="footer">
+                <footer className="footer">
                 <div className="legal">
                     <p><i className="far fa-copyright" /> 2019 Uber Technololy Inc. <span>All Rights Reserved</span> </p>
                     <div className="terms">

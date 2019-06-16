@@ -1,0 +1,16 @@
+@import "../../../../scss/abstract/variable";
+@import "../../../../scss/abstract/mixin";
+
+.pickup {
+  @include leftSideAbsolute();
+  @include toggleEffect();
+  background-color: $white-background-color;
+  width: 400px;
+  max-width: 80%;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
