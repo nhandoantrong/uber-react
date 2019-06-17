@@ -15,13 +15,13 @@ const CustomerTemplate = () => {
     const changeToBookingIfLoggedIn= (Component) =>{
         if (localStorage.getItem("name"))
             return <Redirect to ="/booking"/>
-         return <Component />
+         return Component
     }
 
     const changeToRegisterIfNotLoggedIn = (Component) =>{
         if (!localStorage.getItem("name"))
             return <Redirect to ="/register"/>
-         return <Component />
+         return Component
     }
 
 
@@ -30,9 +30,9 @@ const CustomerTemplate = () => {
             <Headers />
             <Switch>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Route path="/" exact render={()=>changeToBookingIfLoggedIn(LandingPage)} />
-                    <Route path="/register" exact  render={()=>changeToBookingIfLoggedIn(Register)}/>
-                    <Route path="/booking" exact  render={()=>changeToRegisterIfNotLoggedIn(Booking)} />
+                    <Route path="/" exact render={({history})=>changeToBookingIfLoggedIn(<LandingPage history={history} />)} />
+                    <Route path="/register" exact  render={({history})=>changeToBookingIfLoggedIn(<Register history={history}/>)}/>
+                    <Route path="/booking" exact  render={({history})=>changeToRegisterIfNotLoggedIn(<Booking history={history} />)} />
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/tutorial" exact component={Tutorial} />
                     <Route path="/terms" exact component={Terms} />

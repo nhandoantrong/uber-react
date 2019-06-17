@@ -3,17 +3,19 @@ import { connect } from "react-redux";
 
 import './Confirm.scss';
 const Confirm = props => {
+
+
     return (
         <div className={`confirm-booking ${props.isActive ? "active" : ""}`}>
             <div className="place">
-                <i class="fas fa-map-marker-alt"></i>
+                <i className="fas fa-map-marker-alt"></i>
                 <div className="content">
                     <h3>From</h3>
                     <p>{props.booking.pickUpPlace}</p>
                 </div>
             </div>
             <div className="place">
-                <i class="fas fa-location-arrow"></i>
+                <i className="fas fa-location-arrow"></i>
                 <div className="content">
                     <h3>To</h3>
                     <p>{props.booking.destination}</p>
@@ -26,18 +28,24 @@ const Confirm = props => {
                     <p>Time: 35 minutes</p>
                 </div>
                 <div className="fare-breakdown">
-                    <h4>Fare breakdown <i class="fas fa-chevron-down"></i></h4>
+                    <h4>Fare breakdown <i className="fas fa-chevron-down"></i></h4>
+                    
                 </div>
             </div>
 
 
             <div className="btn-group">
                 <div className="back">
-                    <button className="confirm-btn goback" ><i class="fas fa-arrow-left"></i>
+                    <button className="confirm-btn goback" ><i className="fas fa-arrow-left"></i>
                         <span style={{ marginLeft: "8px" }}>Back</span></button>
 
 
-                    <button className="confirm-btn goahead">Confirm <i class="fas fa-arrow-right"></i></button>
+                    <button className="confirm-btn goahead" 
+                    onClick={()=>{
+                        alert("booking successfully");
+                        window.location.reload();
+                    }}
+                    >Confirm <i className="fas fa-arrow-right" style={{marginLeft:"auto"}}></i></button>
                 </div>
 
 

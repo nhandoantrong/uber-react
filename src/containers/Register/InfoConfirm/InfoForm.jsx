@@ -1,8 +1,8 @@
 import React from 'react';
 import { withFormik } from "formik"
 import { vienameseRegex } from "../../../helpers/RegexHelper";
-import {connect} from "react-redux";
-import {changeUserInfo} from "../../../redux/actions/userAction"
+import { connect } from "react-redux";
+import { changeUserInfo } from "../../../redux/actions/userAction"
 const InfoForm = props => {
     const {
         values,
@@ -14,7 +14,7 @@ const InfoForm = props => {
         setValues
     } = props;
     const handleFileChange = (event) => {
-        console.log (event.target.files[0])
+        console.log(event.target.files[0])
         setValues({ ...values, file: URL.createObjectURL(event.target.files[0]) })
     }
 
@@ -23,10 +23,10 @@ const InfoForm = props => {
             <input type="text" placeholder="Enter your fullname" name="fullname"
                 onChange={handleChange} onBlur={handleBlur}
                 className={errors.fullname && touched.fullname ? "error" : touched.fullname ? "success" : ""}
-                
+
             />
             {errors.fullname && touched.fullname ? <div className="feedback">{errors.fullname}</div> :
-            <div className="feedback-success"><span>1</span></div>}
+                <div className="feedback-success"><span>1</span></div>}
 
 
             <div className="gender">
@@ -58,8 +58,8 @@ const InfoForm = props => {
             </div>
             <div className="submit-line">
                 <div className="error-line">
-                    {errors.gender && touched.gender ? <div>{errors.gender}</div>  :"" }
-                    {errors.file && touched.file ? <div>{errors.file}</div>  :"" }
+                    {errors.gender && touched.gender ? <div>{errors.gender}</div> : ""}
+                    {errors.file && touched.file ? <div>{errors.file}</div> : ""}
                 </div>
                 <button type="submit" className="arrow-button" ><i className="fas fa-arrow-right" /></button>
             </div>
@@ -68,13 +68,21 @@ const InfoForm = props => {
     );
 };
 
-const mapDispatchToProps = dispatch =>({
-    changeUserInfo : (name,gender) =>{
-        dispatch(changeUserInfo(name,gender))
+const mapDispatchToProps = dispatch => {
+    return {
+        changeUserInfo: (name, gender) => {
+            dispatch(changeUserInfo(name, gender))
+        }
     }
-})
+}
+const mapStateToProps = (state, ownProps) => {
+    console.log(ownProps)
+    return {
 
-export default connect(null,mapDispatchToProps)(withFormik({
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withFormik({
     mapPropsToValues: () => ({ fullname: '', gender: "", file: null }),
 
     // Custom sync validation
@@ -86,20 +94,18 @@ export default connect(null,mapDispatchToProps)(withFormik({
         else if (!vienameseRegex.test(values.fullname)) {
             error.fullname = "Only contains letters"
         }
-        if (!values.gender)
-        {
-            error.gender= "Choose your gender"
+        if (!values.gender) {
+            error.gender = "Choose your gender"
         }
-        if (!values.file)
-        {
+        if (!values.file) {
             error.file = "Choose your profile picture"
         }
 
         return error;
     },
 
-    handleSubmit: (values, {props }) => {
-        props.changeUserInfo(values.fullname,values.gender)
+    handleSubmit: (values, { props }) => {
+        props.changeUserInfo(values.fullname, values.gender)
         props.history.push("/booking")
     },
 
