@@ -2,7 +2,7 @@ import React from 'react';
 
 const StaticDestination = () => {
     return (
-        <div>
+        <div className="static-destination">
             <div className="familiar-places">
                 <div className="familiar-place-item">
                     <div className="icon">

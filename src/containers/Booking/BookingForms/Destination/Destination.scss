@@ -4,11 +4,16 @@
 .destination {
   @include leftSideAbsolute();
   @include toggleEffect();
+  @include fixedHeightResponsive();
   background-color: #e7e7e7d8;
   padding: 0 0 10px;
   width: 500px;
   max-width: 80%;
 
+  .static-destination{
+    height: 80%;
+  }
+  
   .familiar-places {
     .familiar-place-item {
       display: flex;
@@ -95,6 +100,7 @@
 
   .friend {
     padding: 10px;
+    
     img {
       width: 30px;
       height: 30px;
@@ -109,7 +115,8 @@
     }
     .friend-list {
       display: flex;
-      
+      width: 100%;
+    overflow: auto;
       .friend-item {
         background-color: white;
         margin-right: 10px;

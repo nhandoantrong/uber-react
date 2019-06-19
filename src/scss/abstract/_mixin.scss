@@ -16,7 +16,7 @@
   }
 }
 
-@mixin leftSideAbsolute(){
+@mixin leftSideAbsolute() {
   position: absolute;
   top: 50%;
   left: 10%;
@@ -44,7 +44,7 @@
   transition: 0.15s all ease;
 }
 
-@mixin backgroundImage($link){
+@mixin backgroundImage($link) {
   background-image: url($link);
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,8 +54,8 @@
 @mixin onlyTextContent {
   @include backgroundImage("/img/background.jpg");
   height: 100vh;
-  .content{
-    margin: 10px 10px ;
+  .content {
+    margin: 10px 10px;
     width: auto;
     height: calc(100% - 50px - 110px);
     overflow: auto;
@@ -63,8 +63,17 @@
     padding-left: 20px;
     padding-right: 15%;
     @media screen and (min-width: 576px) {
-        height: calc(100% - 50px - 80px)
+      height: calc(100% - 50px - 80px);
     }
     background-color: $white-background-color;
+  }
+}
+
+@mixin fixedHeightResponsive {
+  max-height: calc(100% - 50px - 150px);
+  overflow: auto;
+  @media screen and (min-width: 576px) {
+    max-height: unset;
+    height: unset;
   }
 }
