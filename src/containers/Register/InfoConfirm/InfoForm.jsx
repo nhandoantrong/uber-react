@@ -76,7 +76,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps)
+    // console.log(ownProps)
     return {
 
     }

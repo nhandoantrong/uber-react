@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import Footer from '../conponents/Footer/Footer';
 import Headers from '../conponents/Header/Headers';
 
-const LandingPage = React.lazy(() => import('../containers/LandingPage/LandingPage'))
-const Register = React.lazy(() => import('../containers/Register/Register'))
-const Booking = React.lazy(() => import('../containers/Booking/Booking'))
-const Contact = React.lazy(() => import('../containers/Contact/Contact'))
-const Tutorial = React.lazy(() => import("../containers/Tutorial/Tutorial"))
-const Terms = React.lazy(() => import("../containers/Terms/Terms"))
+export const LandingPage = React.lazy(() => import('../containers/LandingPage/LandingPage'))
+export const Register = React.lazy(() => import('../containers/Register/Register'))
+export const Booking = React.lazy(() => import('../containers/Booking/Booking'))
+export const Contact = React.lazy(() => import('../containers/Contact/Contact'))
+export const Tutorial = React.lazy(() => import("../containers/Tutorial/Tutorial"))
+export const Terms = React.lazy(() => import("../containers/Terms/Terms"))
+export const PageNotFound = React.lazy(() => import("../containers/PageNotFound/PageNotFound"))
+
 
 const CustomerTemplate = () => {
 
@@ -36,6 +38,7 @@ const CustomerTemplate = () => {
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/tutorial" exact component={Tutorial} />
                     <Route path="/terms" exact component={Terms} />
+                    <Route path="*" component = {PageNotFound } />
                 </Suspense>
 
             </Switch>

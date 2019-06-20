@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux"
 
-const Headers = props => {
+export const Headers = props => {
     const name = props.user.name;
     const gender= props.user.gender;
 
